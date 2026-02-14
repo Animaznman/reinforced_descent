@@ -1,0 +1,33 @@
+name: reinforced_descent
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.11
+
+  - rasterio
+  - gdal
+  - fiona
+  - shapely
+  - proj
+  - geos
+
+  # Force OpenBLAS instead of MKL
+  - libblas=*=*openblas
+  - libcblas=*=*openblas
+  - liblapack=*=*openblas
+
+  - pip
+
+  - pip:
+      - numpy
+      - scipy
+      - pillow
+      - matplotlib
+
+      - gymnasium
+      - stable-baselines3
+
+      - torch --pre --index-url https://download.pytorch.org/whl/nightly/cu128
+      - torchvision --pre --index-url https://download.pytorch.org/whl/nightly/cu128
